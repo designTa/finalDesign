@@ -7,15 +7,15 @@ import entities.itemEntities.Tv;
  * Created by hackeru on 15/02/2018.
  */
 public abstract class Room {
-
-
-    protected String name;
+    
+    protected RoomEnum name;
     protected Door door;
     protected Tv tv;
 
-   public Room(){
+   public Room(RoomEnum name){
        this.door = door;
        this.tv = tv;
+       this.name = name;
    }
 
     public Door getDoor(){
@@ -26,7 +26,7 @@ public abstract class Room {
         return this.tv;
     }
 
-   public String getName(){
+   public RoomEnum getName(){
         return this.name;
    }
 

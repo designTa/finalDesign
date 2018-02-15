@@ -2,6 +2,7 @@ package entities.roomTypes;
 
 import entities.Lightes.RegularLight;
 import entities.Room;
+import entities.RoomEnum;
 
 /**
  * Created by hackeru on 15/02/2018.
@@ -13,7 +14,7 @@ public class LivingRoom extends Room {
     public RegularLight regularLight;
 
     private LivingRoom() {
-        super();
+        super(RoomEnum.LivingRoom);
         regularLight = new RegularLight();
     }
 
