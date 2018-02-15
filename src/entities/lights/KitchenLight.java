@@ -5,6 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by hackeru on 15/02/2018.
  */
+/**
+ * Created a Observer Design Pattern method
+ */
 public class KitchenLight extends Light implements Observable {
 
     private ArrayList<Observer> observers;

@@ -23,7 +23,8 @@ public class Kitchen extends Room {
 
     private Kitchen(){
         super(RoomEnum.Kitchen);
-        this.waterHeater = waterHeater;
+        waterHeater = WaterHeater.getInstance();
+        kitchenLight = new KitchenLight();
     }
 
     public static Kitchen getInstance() {
@@ -47,6 +48,8 @@ public class Kitchen extends Room {
         return "Kitchen{" +
                 "kitchenLight=" + kitchenLight +
                 ", waterHeater=" + waterHeater +
+                ", TV=" + super.getTv() +
+                ", Door=" + super.getDoor() +
                 '}';
     }
 }

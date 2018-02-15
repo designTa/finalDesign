@@ -15,11 +15,14 @@ import java.util.Scanner;
  */
 public class Menu {
 
+    private List<Room> roomList;
     private LivingRoom livingRoom;
     private Kitchen kitchenRoom;
     private Room firstRoom, secondRoom, thirdRoom, forthRoom;
 
     public Menu(List<Room> roomList) {
+        this.roomList = roomList;
+        showHouseStatus();
         initMenuRooms(roomList);
         showRoomsMenu();
     }
@@ -50,8 +53,29 @@ public class Menu {
         }
     }
 
+    private void showHouseStatus() {
+        System.out.println("The house status is:");
+        for (Room room :
+                this.roomList) {
+            switch (room.getName()) {
+                case FirstRoom:
+                case SecondRoom:
+                case ThirdRoom:
+                case ForthRoom:
+                case LivingRoom:
+                    System.out.println(room.toString());
+                    break;
+                case Kitchen:
+                    System.out.println(((Kitchen) room).toString());
+                    break;
+                default:
+                    System.out.println("There isn't any status for the room " + room.getName().name());
+            }
+        }
+    }
+
     private void showRoomsMenu() {
-        System.out.println("The rooms in your house are: \n 1. Room 1 \n 2. Room 2 \n 3. Room 3 \n 4. Room 4 \n 5. Kitchen \n 6. LivingRoom \n Choose a room by it's number:");
+        System.out.println("The rooms in your house are: \n 1. Room 1 \n 2. Room 2 \n 3. Room 3 \n 4. Room 4 \n 5. Kitchen \n 6. LivingRoom \n 7. Or you can show status  \n Choose a room by it's number:");
         Scanner scanner = new Scanner(System.in);
 
         if (scanner.hasNext()) {
@@ -78,6 +102,10 @@ public class Menu {
                     break;
                 case 5:
                     showRoomOptions(kitchenRoom);
+                    scanner.close();
+                    break;
+                case 7:
+                    showHouseStatus();
                     scanner.close();
                     break;
                 default:
@@ -162,7 +190,7 @@ public class Menu {
     }
 
     private void showLightOptions(Room room) {
-        /*isOpenNotification(room, "light");*/
+        isOpenNotification(room, "light");
         System.out.println("1. Light the room 1 \n 2. Darken the room \n 3. Back to main menu \n Choose an option by it's number:");
 
         Light light = room.getLight();
@@ -174,6 +202,7 @@ public class Menu {
                     if (!light.isOpen()) {
                         light.open();
                     }
+                    showRoomsMenu();
                     break;
                 case 2:
                     if (!room.getDoor().isOpen()) {
@@ -181,6 +210,7 @@ public class Menu {
                     } else {
                         System.out.println("\n The door is open, you cannot close the light \n");
                     }
+                    showRoomsMenu();
                     break;
                 case 3:
                     showRoomsMenu();
@@ -193,7 +223,7 @@ public class Menu {
     }
 
     private void showDoorOptions(Room room) {
-       /* isOpenNotification(room, "door");*/
+       isOpenNotification(room, "door");
         System.out.println("1. Open door 1 \n 2. Close door \n 3. Back to main menu \n Choose an option by it's number:");
 
         Door door = room.getDoor();
@@ -205,9 +235,11 @@ public class Menu {
                     if (!door.isOpen()) {
                         door.open();
                     }
+                    showRoomsMenu();
                     break;
                 case 2:
                     door.close();
+                    showRoomsMenu();
                     break;
                 case 3:
                     showRoomsMenu();
@@ -221,7 +253,7 @@ public class Menu {
 
 
     private void showTVOptions(Room room) {
-        /*isOpenNotification(room, "tv");*/
+        isOpenNotification(room, "tv");
         System.out.println("1. Open TV 1 \n 2. Close TV \n 3. Order vod \n 4. Back to main menu \n Choose an option by it's number:");
 
         Tv tv = room.getTv();
@@ -234,12 +266,15 @@ public class Menu {
                     if (!tv.isOpen()) {
                         tv.open();
                     }
+                    showRoomsMenu();
                     break;
                 case 2:
                     tv.close();
+                    showRoomsMenu();
                     break;
                 case 3:
                     tv.orderVOD();
+                    showRoomsMenu();
                 case 4:
                     showRoomsMenu();
                     break;
@@ -251,7 +286,7 @@ public class Menu {
     }
 
     private void showWaterHeatherOptions(Kitchen room) {
-        /*isOpenNotification(room, "waterheater");*/
+        isOpenNotification(room, "waterheater");
         System.out.println("1. Open WaterHeater 1 \n 2. Close WaterHeater \n 3. Back to main menu \n Choose an option by it's number:");
 
         WaterHeater waterHeater = room.getWaterHeater();
@@ -264,9 +299,11 @@ public class Menu {
                     if (!waterHeater.isOpen()) {
                         waterHeater.open();
                     }
+                    showRoomsMenu();
                     break;
                 case 2:
                     waterHeater.close();
+                    showRoomsMenu();
                     break;
                 case 3:
                     showRoomsMenu();

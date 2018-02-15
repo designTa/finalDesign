@@ -37,6 +37,8 @@ public class LivingRoom extends Room {
     public String toString() {
         return "LivingRoom{" +
                 "regularLight=" + regularLight +
+                ", TV=" + super.getTv() +
+                ", Door=" + super.getDoor() +
                 '}';
     }
 }

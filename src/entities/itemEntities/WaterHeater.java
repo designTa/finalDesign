@@ -36,9 +36,12 @@ public class WaterHeater implements Power {
 
     @Override
     public void open() {
-        System.out.println("\n Opened the water heater \n");
-        if((strTime.compareTo(startTime) == 1) && (strTime.compareTo(finishTime) == -1))
-        status = true;
+        if((strTime.compareTo(startTime) == 1) && (strTime.compareTo(finishTime) == -1)){
+            status = true;
+            System.out.println("\n Opened the water heater \n");
+        } else {
+            System.out.println("\n You can't open the water heater at the current time \n");
+        }
     }
 
     @Override

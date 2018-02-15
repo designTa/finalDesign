@@ -1,5 +1,6 @@
 package entities.itemEntities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,16 @@ import java.util.List;
  */
 public class VOD {
 
-    List<String> programsAndMoviesList;
+    private List<String> programsAndMoviesList;
+
+    public VOD()
+    {
+        programsAndMoviesList = new ArrayList<>();
+    }
+
+    public List<String> getProgramsAndMoviesList() {
+        return this.programsAndMoviesList;
+    }
 
     @Override
     public String toString() {

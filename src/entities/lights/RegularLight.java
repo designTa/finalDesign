@@ -8,9 +8,9 @@ public class RegularLight extends Light implements Observer {
     @Override
     public void update(Boolean status) {
         if(status){
-            this.close();
-        } else {
             this.open();
+        } else {
+            this.close();
         }
     }
 

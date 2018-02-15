@@ -9,6 +9,10 @@ public class Tv implements Power {
     private VOD vod;
     private Boolean status = false;
 
+    public Tv(){
+        this.vod = new VOD();
+    }
+
     @Override
     public void open() {
         System.out.println("\n Opened the TV \n");
@@ -30,7 +34,9 @@ public class Tv implements Power {
         if(this.isOpen()){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter a program or a movie name: ");
-            vod.programsAndMoviesList.add(scanner.next());
+            String name = scanner.next();
+            vod.getProgramsAndMoviesList().add(name);
+            scanner.close();
         }
         else {
             System.out.println("You can't order something from VOD, the TV is closed");
