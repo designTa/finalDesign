@@ -1,5 +1,7 @@
 package entities.roomTypes;
 
+import entities.Lightes.KitchenLight;
+import entities.Lightes.RegularLight;
 import entities.Room;
 import entities.RoomEnum;
 import entities.itemEntities.WaterHeater;
@@ -11,6 +13,7 @@ import entities.itemEntities.WaterHeater;
 public class Kitchen extends Room {
 
     private static Kitchen kitchen;
+    private KitchenLight kitchenLight;
 
     private WaterHeater waterHeater;
 
@@ -24,6 +27,11 @@ public class Kitchen extends Room {
             kitchen = new Kitchen();
         }
         return kitchen;
+    }
+
+
+    public KitchenLight getLight(){
+        return this.kitchenLight;
     }
 
 }
