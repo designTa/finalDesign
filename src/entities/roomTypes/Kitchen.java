@@ -29,6 +29,9 @@ public class Kitchen extends Room {
         return kitchen;
     }
 
+    public WaterHeater getWaterHeater(){
+        return this.waterHeater;
+    }
 
     public KitchenLight getLight(){
         return this.kitchenLight;

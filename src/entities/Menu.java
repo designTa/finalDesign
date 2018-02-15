@@ -1,5 +1,11 @@
 package entities;
 
+import entities.Lightes.KitchenLight;
+import entities.Lightes.Light;
+import entities.Lightes.RegularLight;
+import entities.itemEntities.Door;
+import entities.itemEntities.Tv;
+import entities.itemEntities.WaterHeater;
 import entities.roomTypes.Kitchen;
 import entities.roomTypes.LivingRoom;
 
@@ -15,15 +21,15 @@ public class Menu {
     private Kitchen kitchenRoom;
     private Room firstRoom, secondRoom, thirdRoom, forthRoom;
 
-    public Menu(List<Room> roomList){
+    public Menu(List<Room> roomList) {
         initMenuRooms(roomList);
         showRoomsMenu();
     }
 
-    private void initMenuRooms(List<Room> roomList){
-        for (Room room:
+    private void initMenuRooms(List<Room> roomList) {
+        for (Room room :
                 roomList) {
-            switch (room.getName()){
+            switch (room.getName()) {
                 case LivingRoom:
                     livingRoom = (LivingRoom) room;
                     break;
@@ -86,29 +92,159 @@ public class Menu {
             case SecondRoom:
             case ThirdRoom:
             case ForthRoom:
-                System.out.println("Choose an object to change it's status or order VOD: \n 1. Light \n 2. Door \n 3. TV \n Choose an object by it's number:");
-                break;
             case LivingRoom:
-                System.out.println("Choose an object to change it's status or order VOD: \n 1. Light \n 2. Door \n 3. TV \n Choose an object by it's number:");
+                showOptionsByRegularRoom(room);
                 break;
+
             case Kitchen:
+                System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV 4. WaterHeater \n Choose an object by it's number:");
+
                 break;
         }
 
     }
 
-    private void showLightOptions(Room room){
+    private void showOptionsByRegularRoom(Room room) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV \n Choose an object by it's number:");
+        switch (scanner.nextInt()){
+            case 1:
+                showLightOptions(room);
+                scanner.close();
+                break;
+            case 2:
+                showDoorOptions(room);
+                scanner.close();
+                break;
+            case 3:
+                showTVOptions(room);
+                scanner.close();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void showOptionsByKitchenRoom(Room room) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV \n 4. WaterHeater \n Choose an object by it's number:");
+        switch (scanner.nextInt()){
+            case 1:
+                showLightOptions(room);
+                scanner.close();
+                break;
+            case 2:
+                showDoorOptions(room);
+                scanner.close();
+                break;
+            case 3:
+                showTVOptions(room);
+                scanner.close();
+                break;
+            case 4:
+                showWaterHeatherOptions(room);
+                scanner.close();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void showLightOptions(Room room) {
         System.out.println("1. Light the room 1 \n 2. Darken the room \n Choose an option by it's number:");
 
-        Light
+        Light light = room.getLight();
 
-        if(room.getName() == RoomEnum.Kitchen)
+      /*  if (room.getName() == RoomEnum.Kitchen) {
+            KitchenLight kitchenLight = (KitchenLight) light;
+        } else {
+            RegularLight regularLight = (RegularLight) light;
+        }*/
 
         Scanner scanner = new Scanner(System.in);
-        if(scanner.hasNext()){
-            switch (scanner.nextInt()){
+        if (scanner.hasNext()) {
+            switch (scanner.nextInt()) {
                 case 1:
-                    room.getName
+                    if (!light.isOpen()) {
+                        light.open();
+                    }
+                    break;
+                case 2:
+                    light.close();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void showDoorOptions(Room room) {
+        System.out.println("1. Open door 1 \n 2. Close door \n Choose an option by it's number:");
+
+        Door door = room.getDoor();
+
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNext()) {
+            switch (scanner.nextInt()) {
+                case 1:
+                    if (!door.isOpen()) {
+                        door.open();
+                    }
+                    break;
+                case 2:
+                    door.close();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+
+    private void showTVOptions(Room room) {
+        System.out.println("1. Open TV 1 \n 2. Close TV \n 3. Order vod \n Choose an option by it's number:");
+
+        Tv tv = room.getTv();
+
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNext()) {
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    if (!tv.isOpen()) {
+                        tv.open();
+                    }
+                    break;
+                case 2:
+                    tv.close();
+                    break;
+                case 3:
+                    tv.orderVOD();
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void showWaterHeatherOptions(Kitchen room) {
+        System.out.println("1. Open WaterHeater 1 \n 2. Close WaterHeater \n Choose an option by it's number:");
+
+        WaterHeater waterHeater = room.getWaterHeater();
+
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNext()) {
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    if (!waterHeater.isOpen()) {
+                        waterHeater.open();
+                    }
+                    break;
+                case 2:
+                    waterHeater.close();
+                    break;
+                default:
+                    break;
             }
         }
     }

@@ -1,5 +1,6 @@
 package entities;
 
+import entities.Lightes.Light;
 import entities.itemEntities.Door;
 import entities.itemEntities.Tv;
 
@@ -7,27 +8,33 @@ import entities.itemEntities.Tv;
  * Created by hackeru on 15/02/2018.
  */
 public abstract class Room {
-    
-    protected RoomEnum name;
-    protected Door door;
-    protected Tv tv;
 
-   public Room(RoomEnum name){
-       this.door = door;
-       this.tv = tv;
-       this.name = name;
-   }
+    private RoomEnum name;
+    private Door door;
+    private Tv tv;
+    private Light light;
 
-    public Door getDoor(){
+    public Room(RoomEnum name) {
+        this.door = door;
+        this.light = light;
+        this.tv = tv;
+        this.name = name;
+    }
+
+    public Door getDoor() {
         return this.door;
     }
 
-    public Tv getTv(){
+    public Tv getTv() {
         return this.tv;
     }
 
-   public RoomEnum getName(){
+    public Light getLight() {
+        return this.light;
+    }
+
+    public RoomEnum getName() {
         return this.name;
-   }
+    }
 
 }

@@ -15,7 +15,7 @@ public class Door implements Power {
     }
 
     @Override
-    public void getStatus() {
-        System.out.println();
+    public Boolean isOpen() {
+        return true;
     }
 }
