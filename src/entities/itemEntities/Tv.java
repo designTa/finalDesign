@@ -37,4 +37,12 @@ public class Tv implements Power {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Tv{" +
+                "vod=" + vod +
+                ", status=" + status +
+                '}';
+    }
 }
