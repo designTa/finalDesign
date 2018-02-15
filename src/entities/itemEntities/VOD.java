@@ -7,10 +7,9 @@ import java.util.List;
  */
 public class VOD {
 
-    List<String> ProgramsAndMovies;
+    List<String> programsAndMoviesList;
 
-    public VOD(){
-    }
+
 
 
 }

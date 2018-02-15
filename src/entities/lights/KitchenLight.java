@@ -1,6 +1,4 @@
-package entities.Lightes;
-
-import entities.itemEntities.Power;
+package entities.lights;
 
 import java.util.ArrayList;
 

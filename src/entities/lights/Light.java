@@ -1,4 +1,4 @@
-package entities.Lightes;
+package entities.lights;
 
 import entities.itemEntities.Power;
 

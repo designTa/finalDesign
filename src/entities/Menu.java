@@ -1,8 +1,6 @@
 package entities;
 
-import entities.Lightes.KitchenLight;
-import entities.Lightes.Light;
-import entities.Lightes.RegularLight;
+import entities.lights.Light;
 import entities.itemEntities.Door;
 import entities.itemEntities.Tv;
 import entities.itemEntities.WaterHeater;

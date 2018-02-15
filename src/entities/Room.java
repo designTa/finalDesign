@@ -1,6 +1,6 @@
 package entities;
 
-import entities.Lightes.Light;
+import entities.lights.Light;
 import entities.itemEntities.Door;
 import entities.itemEntities.Tv;
 
