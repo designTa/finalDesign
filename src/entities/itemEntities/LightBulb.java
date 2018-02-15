@@ -3,7 +3,7 @@ package entities.itemEntities;
 /**
  * Created by hackeru on 15/02/2018.
  */
-public class LightBolb implements Power {
+public class LightBulb implements Power {
     @Override
     public void open() {
 
