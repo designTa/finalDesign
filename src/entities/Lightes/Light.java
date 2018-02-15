@@ -11,11 +11,13 @@ public abstract class Light implements Power {
 
     @Override
     public void open() {
+        System.out.println("\n Opened the light \n");
         status = true;
     }
 
     @Override
     public void close() {
+        System.out.println("\n Closed the light \n");
         status = false;
     }
 

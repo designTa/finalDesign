@@ -9,11 +9,13 @@ public class Tv implements Power {
 
     @Override
     public void open() {
+        System.out.println("\n Opened the TV \n");
         status = true;
     }
 
     @Override
     public void close() {
+        System.out.println("\n Closed the TV \n");
         status = false;
     }
 
