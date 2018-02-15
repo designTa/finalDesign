@@ -6,9 +6,7 @@ import static java.lang.System.currentTimeMillis;
 public class MainProgram {
 
     public static void main(String[] args) {
-        System.out.println(System.currentTimeMillis());
-        HouseManager houseManager = new HouseManager();
-
+       new HouseManager();
     }
 
 

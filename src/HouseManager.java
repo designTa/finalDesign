@@ -1,6 +1,9 @@
 import entities.Menu;
 import entities.Room;
 import entities.RoomEnum;
+import entities.lights.KitchenLight;
+import entities.lights.Observable;
+import entities.lights.Observer;
 import entities.roomTypes.Kitchen;
 import factories.RoomFactory;
 
@@ -21,10 +24,14 @@ public class HouseManager {
 
     private void showHouseStatus() {
         System.out.println("The house status is:");
-        for (Room room:
-             roomList) {
-            switch (room.getName()){
-                case FirstRoom: case SecondRoom: case ThirdRoom: case ForthRoom: case LivingRoom:
+        for (Room room :
+                roomList) {
+            switch (room.getName()) {
+                case FirstRoom:
+                case SecondRoom:
+                case ThirdRoom:
+                case ForthRoom:
+                case LivingRoom:
                     room.toString();
                     break;
                 case Kitchen:
@@ -37,9 +44,17 @@ public class HouseManager {
     }
 
     private void createRoomList() {
+        Observable observable = null;
+        Observer observer = null;
         for (RoomEnum roomEnum :
                 RoomEnum.values()) {
-            this.roomList.add(RoomFactory.createRoom(roomEnum));
+            Room room = RoomFactory.createRoom(roomEnum);
+            this.roomList.add(room);
+            if (roomEnum.equals(RoomEnum.Kitchen)) {
+                observable = (KitchenLight) room.getLight();
+            } else {
+                observable.addObserver(observer);
+            }
         }
     }
 }

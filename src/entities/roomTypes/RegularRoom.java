@@ -1,5 +1,6 @@
 package entities.roomTypes;
 
+import entities.lights.Observable;
 import entities.lights.RegularLight;
 import entities.Room;
 import entities.RoomEnum;

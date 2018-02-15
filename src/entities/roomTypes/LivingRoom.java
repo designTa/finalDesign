@@ -10,8 +10,7 @@ import entities.RoomEnum;
 public class LivingRoom extends Room {
 
     private static LivingRoom livingRoom;
-
-    public RegularLight regularLight;
+    private RegularLight regularLight;
 
     private LivingRoom() {
         super(RoomEnum.LivingRoom);
