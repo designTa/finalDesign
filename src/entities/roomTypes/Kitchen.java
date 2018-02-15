@@ -1,9 +1,6 @@
 package entities.roomTypes;
 
 import entities.*;
-import entities.itemEntities.Door;
-import entities.itemEntities.LightBolb;
-import entities.itemEntities.Tv;
 import entities.itemEntities.WaterHeater;
 
 /**

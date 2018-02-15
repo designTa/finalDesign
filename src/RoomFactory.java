@@ -1,26 +1,35 @@
 import entities.Room;
+import entities.RoomEnum;
 import entities.roomTypes.Kitchen;
 import entities.roomTypes.RegularRoom;
 
 import java.util.Scanner;
 
+import static entities.RoomEnum.FirstRoom;
+
 /**
  * Created by hackeru on 15/02/2018.
  */
 public class RoomFactory {
-    public static Room createRoom(int typeOfRoom){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter type of Room:");
-        System.out.println("1- for kitchen \n 2- for the living room \n 3. for a regular room ");
-        switch (scanner.nextInt()){
-            case 1:
+    public static Room createRoom(RoomEnum roomEnum){
+        switch (roomEnum){
+            case Kitchen:
                 return new Kitchen();
 
-            case 2:
+            case SecondRoom:
                 return new RegularRoom();
 
-            case 3:
+            case ThirdRoom:
                 return new RegularRoom();
+
+            case FirstRoom:
+                return new RegularRoom();
+
+            case ForthRoom:
+                return new RegularRoom();
+
+            case LivingRoom:
+                return null
 
             default:
                 System.out.println("Wrong input");

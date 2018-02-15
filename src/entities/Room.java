@@ -1,7 +1,7 @@
 package entities;
 
 import entities.itemEntities.Door;
-import entities.itemEntities.LightBolb;
+import entities.itemEntities.LightBulb;
 import entities.itemEntities.Tv;
 
 /**
@@ -9,13 +9,12 @@ import entities.itemEntities.Tv;
  */
 public abstract class Room {
 
-    protected LightBolb lightBolb;
+    protected LightBulb lightBulb;
     protected Door door;
     protected Tv tv;
 
    public Room(){
-
-       this.lightBolb = lightBolb;
+       this.lightBulb = lightBulb;
        this.door = door;
        this.tv = tv;
    }
