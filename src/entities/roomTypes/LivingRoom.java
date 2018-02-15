@@ -1,5 +1,6 @@
 package entities.roomTypes;
 
+import entities.Lightes.RegularLight;
 import entities.Room;
 
 /**
@@ -7,13 +8,23 @@ import entities.Room;
  */
 public class LivingRoom extends Room {
 
-    private static LivingRoom ourInstance = new LivingRoom();
+    private static LivingRoom livingRoom;
 
-    public static LivingRoom getInstance() {
-        return ourInstance;
-    }
+    public RegularLight regularLight;
 
     private LivingRoom() {
         super();
+        regularLight = new RegularLight();
+    }
+
+    public static LivingRoom getInstance() {
+        if(livingRoom == null){
+            livingRoom = new LivingRoom();
+        }
+        return livingRoom;
+    }
+
+    public RegularLight getRegularLight(){
+        return this.regularLight;
     }
 }
