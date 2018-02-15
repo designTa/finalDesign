@@ -23,4 +23,10 @@ public class Door implements Power {
         return status;
     }
 
+    @Override
+    public String toString() {
+        return "Door{" +
+                "status=" + status +
+                '}';
+    }
 }

@@ -25,4 +25,11 @@ public abstract class Light implements Power {
     public Boolean isOpen() {
         return status;
     }
+
+    @Override
+    public String toString() {
+        return "Light{" +
+                "status=" + status +
+                '}';
+    }
 }

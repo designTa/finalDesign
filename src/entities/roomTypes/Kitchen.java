@@ -36,4 +36,11 @@ public class Kitchen extends Room {
         return this.kitchenLight;
     }
 
+    @Override
+    public String toString() {
+        return "Kitchen{" +
+                "kitchenLight=" + kitchenLight +
+                ", waterHeater=" + waterHeater +
+                '}';
+    }
 }

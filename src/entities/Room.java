@@ -37,4 +37,13 @@ public abstract class Room {
         return this.name;
     }
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "name=" + name +
+                ", door=" + door +
+                ", tv=" + tv +
+                ", light=" + light +
+                '}';
+    }
 }

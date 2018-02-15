@@ -20,4 +20,11 @@ public class RegularRoom extends Room {
     public RegularLight getLight(){
         return this.regularLight;
     }
+
+    @Override
+    public String toString() {
+        return "RegularRoom{" +
+                "regularLight=" + regularLight +
+                '}';
+    }
 }
