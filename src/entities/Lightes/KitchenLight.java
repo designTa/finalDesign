@@ -1,7 +1,5 @@
 package entities.Lightes;
 
-import entities.itemEntities.Power;
-
 import java.util.ArrayList;
 
 /**
@@ -9,30 +7,41 @@ import java.util.ArrayList;
  */
 public class KitchenLight extends Light implements Observable {
 
-    ArrayList<Observer> observers;
+    private ArrayList<Observer> observers;
 
-    public KitchenLight(){
+    public KitchenLight() {
         observers = new ArrayList<Observer>();
     }
 
 
     @Override
     public void addObserver(Observer observer) {
-
-       observers.add(observer);
+        observers.add(observer);
     }
 
     @Override
     public void deleteObserver(Observer observer) {
-
         observers.remove(observer);
     }
 
+
+    @Override
+    public void open() {
+        super.open();
+        notifyObserver();
+    }
+
+    @Override
+    public void close() {
+        super.close();
+        notifyObserver();
+    }
+
+
     @Override
     public void notifyObserver() {
-
-        for (Observer observer: observers) {
-           observer.update(this.isOpen());
+        for (Observer observer : observers) {
+            observer.update(this.isOpen());
         }
     }
 

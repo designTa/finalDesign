@@ -8,29 +8,15 @@ import entities.itemEntities.Power;
 public class RegularLight extends Light implements Observer {
 
     public RegularLight(Observable kitchenLight){
-
         kitchenLight.addObserver(this);
-    }
-
-    @Override
-    public void open() {
-        super.open();
-    }
-
-    @Override
-    public void close() {
-        super.close();
-    }
-
-    @Override
-    public Boolean isOpen() {
-        return super.isOpen();
     }
 
     @Override
     public void update(Boolean status) {
         if(status){
             this.close();
+        } else {
+            this.open();
         }
     }
 
