@@ -7,7 +7,7 @@ import entities.Room;
  */
 public class RegularRoom extends Room {
 
-    public RegularRoom(String name) {
-        super(name);
+    public RegularRoom() {
+        super();
     }
 }
