@@ -1,9 +1,14 @@
 import entities.Menu;
 import entities.Room;
 import entities.RoomEnum;
+import entities.lights.KitchenLight;
+import entities.lights.Observable;
+import entities.lights.Observer;
+import entities.lights.RegularLight;
 import entities.roomTypes.Kitchen;
 import factories.RoomFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,31 +20,27 @@ public class HouseManager {
 
     public HouseManager() {
         createRoomList();
-        showHouseStatus();
         new Menu(roomList);
     }
 
-    private void showHouseStatus() {
-        System.out.println("The house status is:");
-        for (Room room:
-             roomList) {
-            switch (room.getName()){
-                case FirstRoom: case SecondRoom: case ThirdRoom: case ForthRoom: case LivingRoom:
-                    room.toString();
-                    break;
-                case Kitchen:
-                    ((Kitchen) room).toString();
-                    break;
-                default:
-                    System.out.println("There isn't any status for the room " + room.getName().name());
-            }
-        }
-    }
-
     private void createRoomList() {
+
+        List<Room> roomList = new ArrayList<>();
+
+        Kitchen kitchen = (Kitchen) RoomFactory.createRoom(RoomEnum.Kitchen);
+        roomList.add(kitchen);
+        KitchenLight kitchenLight = (KitchenLight) kitchen.getLight();
+        RegularLight regularLight = null;
+
         for (RoomEnum roomEnum :
                 RoomEnum.values()) {
-            this.roomList.add(RoomFactory.createRoom(roomEnum));
+            if(!roomEnum.equals(RoomEnum.Kitchen)){
+                Room room = RoomFactory.createRoom(roomEnum);
+                roomList.add(room);
+                regularLight = (RegularLight) room.getLight();
+                kitchenLight.addObserver(regularLight);
+            }
         }
+        this.roomList = roomList;
     }
 }

@@ -15,9 +15,8 @@ public abstract class Room {
     private Light light;
 
     public Room(RoomEnum name) {
-        this.door = door;
-        this.light = light;
-        this.tv = tv;
+        this.door = new Door();
+        this.tv = new Tv();
         this.name = name;
     }
 

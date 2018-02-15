@@ -1,5 +1,6 @@
 package entities.roomTypes;
 
+import entities.lights.Observable;
 import entities.lights.RegularLight;
 import entities.Room;
 import entities.RoomEnum;
@@ -24,6 +25,8 @@ public class RegularRoom extends Room {
     public String toString() {
         return "RegularRoom{" +
                 "regularLight=" + regularLight +
+                ", TV=" + super.getTv() +
+                ", Door=" + super.getDoor() +
                 '}';
     }
 }

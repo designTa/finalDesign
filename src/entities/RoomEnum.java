@@ -5,11 +5,11 @@ package entities;
  */
 public enum RoomEnum {
 
+    Kitchen,
     FirstRoom,
     SecondRoom,
     ThirdRoom,
     ForthRoom,
-    Kitchen,
     LivingRoom;
 
 }

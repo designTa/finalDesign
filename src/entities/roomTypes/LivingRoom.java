@@ -7,11 +7,15 @@ import entities.RoomEnum;
 /**
  * Created by hackeru on 15/02/2018.
  */
+
+/**
+ * Created a Singleton Design Pattern method
+ * in order to create one living room in the start of the program;
+ */
 public class LivingRoom extends Room {
 
     private static LivingRoom livingRoom;
-
-    public RegularLight regularLight;
+    private RegularLight regularLight;
 
     private LivingRoom() {
         super(RoomEnum.LivingRoom);
@@ -33,6 +37,8 @@ public class LivingRoom extends Room {
     public String toString() {
         return "LivingRoom{" +
                 "regularLight=" + regularLight +
+                ", TV=" + super.getTv() +
+                ", Door=" + super.getDoor() +
                 '}';
     }
 }
