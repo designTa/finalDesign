@@ -9,6 +9,8 @@ import entities.itemEntities.Tv;
  */
 public abstract class Room {
 
+
+    protected String name;
     protected LightBulb lightBulb;
     protected Door door;
     protected Tv tv;
@@ -17,6 +19,23 @@ public abstract class Room {
        this.lightBulb = lightBulb;
        this.door = door;
        this.tv = tv;
+   }
+
+
+    public LightBulb getLightBolb(){
+       return this.lightBulb;
+   }
+
+    public Door getDoor(){
+        return this.door;
+    }
+
+    public Tv getTv(){
+        return this.tv;
+    }
+
+   public String getName(){
+        return this.name;
    }
 
 }

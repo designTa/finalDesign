@@ -4,6 +4,7 @@ package entities.itemEntities;
  * Created by hackeru on 15/02/2018.
  */
 public class Tv implements Power {
+    VOD vod;
     @Override
     public void open() {
         System.out.println();
@@ -17,5 +18,9 @@ public class Tv implements Power {
     @Override
     public void getStatus() {
         System.out.println();
+    }
+
+    public void orderVOD(){
+
     }
 }

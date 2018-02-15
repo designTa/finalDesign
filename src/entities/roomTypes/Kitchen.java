@@ -1,18 +1,25 @@
 package entities.roomTypes;
 
-import entities.*;
+import entities.Room;
 import entities.itemEntities.WaterHeater;
+
 
 /**
  * Created by hackeru on 15/02/2018.
  */
 public class Kitchen extends Room {
+    private static Kitchen ourInstance = new Kitchen();
 
-   private WaterHeater waterHeater;
+    public static Kitchen getInstance() {
+        return ourInstance;
+    }
 
-   public Kitchen(){
+    private WaterHeater waterHeater;
 
-       super();
-       this.waterHeater = waterHeater;
-   }
+    public Kitchen(){
+
+        super();
+        this.waterHeater = waterHeater;
+    }
+
 }
