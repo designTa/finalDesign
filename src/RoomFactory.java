@@ -1,6 +1,7 @@
 import entities.Room;
 import entities.RoomEnum;
 import entities.roomTypes.Kitchen;
+import entities.roomTypes.LivingRoom;
 import entities.roomTypes.RegularRoom;
 
 /**
@@ -8,25 +9,23 @@ import entities.roomTypes.RegularRoom;
  */
 public class RoomFactory {
 
+    /**
+     * Created a Factory Design Pattern method
+     * in order to create rooms in the start of the program;
+     */
     public static Room createRoom(RoomEnum roomEnum){
         switch (roomEnum){
             case Kitchen:
                 return new Kitchen();
 
-            case SecondRoom:
-                return new RegularRoom();
-
-            case ThirdRoom:
-                return new RegularRoom();
-
             case FirstRoom:
-                return new RegularRoom();
-
+            case SecondRoom:
+            case ThirdRoom:
             case ForthRoom:
                 return new RegularRoom();
 
             case LivingRoom:
-                return null;
+                return LivingRoom.getInstance();
 
             default:
                 System.out.println("Wrong input");
