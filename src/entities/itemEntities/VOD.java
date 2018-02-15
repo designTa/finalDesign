@@ -9,7 +9,10 @@ public class VOD {
 
     List<String> programsAndMoviesList;
 
-
-
-
+    @Override
+    public String toString() {
+        return "VOD{" +
+                "programsAndMoviesList=" + programsAndMoviesList +
+                '}';
+    }
 }

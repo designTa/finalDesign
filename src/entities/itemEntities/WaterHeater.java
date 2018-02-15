@@ -47,4 +47,12 @@ public class WaterHeater implements Power {
     public Boolean isOpen() {
         return status;
     }
+
+    @Override
+    public String toString() {
+        return "WaterHeater{" +
+                "status=" + status +
+                ", time now='" + strTime + '\'' +
+                '}';
+    }
 }
