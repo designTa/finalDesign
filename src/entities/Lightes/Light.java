@@ -7,7 +7,7 @@ import entities.itemEntities.Power;
  */
 public abstract class Light implements Power {
 
-    Boolean status = false;
+    private Boolean status = false;
 
     @Override
     public void open() {
