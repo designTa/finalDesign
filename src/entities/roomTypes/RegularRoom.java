@@ -14,7 +14,7 @@ public class RegularRoom extends Room {
         regularLight = new RegularLight();
     }
 
-    public RegularLight getRegularLight(){
+    public RegularLight getLight(){
         return this.regularLight;
     }
 }
