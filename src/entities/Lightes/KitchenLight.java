@@ -6,6 +6,9 @@ import entities.itemEntities.Power;
  * Created by hackeru on 15/02/2018.
  */
 public class KitchenLight implements Observable, Power {
+
+    Boolean status = false;
+
     @Override
     public void addObserver(Observer observer) {
 
@@ -23,16 +26,16 @@ public class KitchenLight implements Observable, Power {
 
     @Override
     public void open() {
-
+        status = true;
     }
 
     @Override
     public void close() {
-
+        status = false;
     }
 
     @Override
-    public void getStatus() {
-
+    public Boolean isOpen() {
+        return status;
     }
 }
