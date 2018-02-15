@@ -98,7 +98,7 @@ public class Menu {
 
             case Kitchen:
                 System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV 4. WaterHeater \n Choose an object by it's number:");
-
+                showOptionsByKitchenRoom((Kitchen)(room));
                 break;
         }
 
@@ -125,7 +125,7 @@ public class Menu {
         }
     }
 
-    private void showOptionsByKitchenRoom(Room room) {
+    private void showOptionsByKitchenRoom(Kitchen room) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV \n 4. WaterHeater \n Choose an object by it's number:");
         switch (scanner.nextInt()){
