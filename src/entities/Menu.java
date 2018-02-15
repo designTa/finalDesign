@@ -168,7 +168,11 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    light.close();
+                    if(!room.getDoor().isOpen()){
+                        light.close();
+                    } else {
+                        System.out.println("\n The door is open, you cannot close the light \n");
+                    }
                     break;
                 default:
                     break;
