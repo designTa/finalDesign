@@ -6,5 +6,5 @@ package entities.itemEntities;
 public interface Power {
     void open();
     void close();
-    void isClosed();
+    void getStatus();
 }

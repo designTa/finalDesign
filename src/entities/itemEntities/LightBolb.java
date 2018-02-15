@@ -15,7 +15,7 @@ public class LightBolb implements Power {
     }
 
     @Override
-    public void isClosed() {
+    public void getStatus() {
 
     }
 }

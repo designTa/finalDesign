@@ -6,16 +6,16 @@ package entities.itemEntities;
 public class Tv implements Power {
     @Override
     public void open() {
-
+        System.out.println();
     }
 
     @Override
     public void close() {
-
+        System.out.println();
     }
 
     @Override
-    public void isClosed() {
-
+    public void getStatus() {
+        System.out.println();
     }
 }

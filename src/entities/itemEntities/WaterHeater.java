@@ -27,7 +27,7 @@ public class WaterHeater implements Power {
     }
 
     @Override
-    public void isClosed() {
+    public void getStatus() {
 
     }
 }
