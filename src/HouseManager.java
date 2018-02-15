@@ -2,6 +2,7 @@ import entities.Menu;
 import entities.Room;
 import entities.RoomEnum;
 import entities.roomTypes.Kitchen;
+import factories.RoomFactory;
 
 import java.util.List;
 

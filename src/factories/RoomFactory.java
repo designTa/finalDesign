@@ -1,3 +1,5 @@
+package factories;
+
 import entities.Room;
 import entities.RoomEnum;
 import entities.roomTypes.Kitchen;
