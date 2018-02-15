@@ -13,9 +13,9 @@ public class Kitchen extends Room {
 
    private WaterHeater waterHeater;
 
-   public Kitchen(LightBolb lightBolb, Door door, Tv tv, WaterHeater waterHeater ){
+   public Kitchen(){
 
-       super(lightBolb, door, tv);
+       super();
        this.waterHeater = waterHeater;
    }
 }
