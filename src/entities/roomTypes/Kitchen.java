@@ -1,6 +1,7 @@
 package entities.roomTypes;
 
 import entities.Room;
+import entities.RoomEnum;
 import entities.itemEntities.WaterHeater;
 
 
@@ -14,7 +15,7 @@ public class Kitchen extends Room {
     private WaterHeater waterHeater;
 
     private Kitchen(){
-        super();
+        super(RoomEnum.Kitchen);
         this.waterHeater = waterHeater;
     }
 
