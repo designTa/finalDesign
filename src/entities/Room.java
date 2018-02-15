@@ -13,7 +13,7 @@ public abstract class Room {
     protected Door door;
     protected Tv tv;
 
-   public Room(LightBolb lightBolb, Door door, Tv tv){
+   public Room(){
 
        this.lightBolb = lightBolb;
        this.door = door;
