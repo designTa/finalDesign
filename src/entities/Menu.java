@@ -11,9 +11,9 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    LivingRoom livingRoom;
-    Kitchen kitchenRoom;
-    Room firstRoom, secondRoom, thirdRoom, forthRoom;
+    private LivingRoom livingRoom;
+    private Kitchen kitchenRoom;
+    private Room firstRoom, secondRoom, thirdRoom, forthRoom;
 
     public Menu(List<Room> roomList){
         initMenuRooms(roomList);
@@ -99,7 +99,11 @@ public class Menu {
 
     private void showLightOptions(Room room){
         System.out.println("1. Light the room 1 \n 2. Darken the room \n Choose an option by it's number:");
-        
+
+        Light
+
+        if(room.getName() == RoomEnum.Kitchen)
+
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNext()){
             switch (scanner.nextInt()){
