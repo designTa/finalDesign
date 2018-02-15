@@ -1,9 +1,9 @@
-package entities;
+package entities.itemEntities;
 
 /**
  * Created by hackeru on 15/02/2018.
  */
-public class Door implements Power {
+public class LightBolb implements Power {
     @Override
     public void open() {
 

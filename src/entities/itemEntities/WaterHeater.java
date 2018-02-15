@@ -1,4 +1,4 @@
-package entities;
+package entities.itemEntities;
 
 /**
  * Created by hackeru on 15/02/2018.
