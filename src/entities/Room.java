@@ -1,6 +1,8 @@
-import entities.Door;
-import entities.LightBolb;
-import entities.Tv;
+package entities;
+
+import entities.itemEntities.Door;
+import entities.itemEntities.LightBolb;
+import entities.itemEntities.Tv;
 
 /**
  * Created by hackeru on 15/02/2018.

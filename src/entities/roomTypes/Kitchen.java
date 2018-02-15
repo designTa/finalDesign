@@ -1,7 +1,10 @@
-import entities.Door;
-import entities.LightBolb;
-import entities.Tv;
-import entities.WaterHeater;
+package entities.roomTypes;
+
+import entities.*;
+import entities.itemEntities.Door;
+import entities.itemEntities.LightBolb;
+import entities.itemEntities.Tv;
+import entities.itemEntities.WaterHeater;
 
 /**
  * Created by hackeru on 15/02/2018.
