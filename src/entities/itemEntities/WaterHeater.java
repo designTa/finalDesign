@@ -13,16 +13,12 @@ import static java.lang.System.currentTimeMillis;
 public class WaterHeater implements Power {
 
     private static WaterHeater waterHeater;
-    Boolean status = false;
-    SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm:ss");
-    String startTime = "08:00:00";
-    String finishTime = "12:00:00";
-
-
-
-    Date now = new Date();
-
-    String strTime = sdfTime.format(now);
+    private Boolean status = false;
+    private SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm:ss");
+    private final String startTime = "08:00:00";
+    private final String finishTime = "12:00:00";
+    private Date now = new Date();
+    private String strTime = sdfTime.format(now);
 
 
     public static WaterHeater getInstance() {
