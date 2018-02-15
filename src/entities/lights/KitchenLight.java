@@ -1,4 +1,4 @@
-package entities.Lightes;
+package entities.lights;
 
 import java.util.ArrayList;
 

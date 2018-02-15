@@ -1,7 +1,6 @@
 package entities.roomTypes;
 
-import entities.Lightes.KitchenLight;
-import entities.Lightes.RegularLight;
+import entities.lights.KitchenLight;
 import entities.Room;
 import entities.RoomEnum;
 import entities.itemEntities.WaterHeater;

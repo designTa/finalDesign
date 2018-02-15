@@ -1,5 +1,7 @@
 package entities.itemEntities;
 
+import java.util.Scanner;
+
 /**
  * Created by hackeru on 15/02/2018.
  */
@@ -25,6 +27,14 @@ public class Tv implements Power {
     }
 
     public void orderVOD(){
+        if(this.isOpen()){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter a program or a movie name: ");
+            vod.programsAndMoviesList.add(scanner.next());
+        }
+        else {
+            System.out.println("You can't order something from VOD, the TV is closed");
+        }
 
     }
 }
