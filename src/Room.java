@@ -5,7 +5,7 @@ import entities.Tv;
 /**
  * Created by hackeru on 15/02/2018.
  */
-public class Room {
+public abstract class Room {
 
     protected LightBolb lightBolb;
     protected Door door;
