@@ -10,6 +10,10 @@ import static java.lang.System.currentTimeMillis;
  * Created by hackeru on 15/02/2018.
  */
 
+/**
+ * Created a Singleton Design Pattern method
+ * in order to create one WaterHeater in the Kitchen start of the program;
+ */
 public class WaterHeater implements Power {
 
     private static WaterHeater waterHeater;

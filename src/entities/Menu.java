@@ -1,9 +1,9 @@
 package entities;
 
-import entities.lights.Light;
 import entities.itemEntities.Door;
 import entities.itemEntities.Tv;
 import entities.itemEntities.WaterHeater;
+import entities.lights.Light;
 import entities.roomTypes.Kitchen;
 import entities.roomTypes.LivingRoom;
 
@@ -98,7 +98,7 @@ public class Menu {
                 break;
 
             case Kitchen:
-                showOptionsByKitchenRoom((Kitchen)(room));
+                showOptionsByKitchenRoom((Kitchen) (room));
                 break;
             default:
                 System.out.println("Wrong choice");
@@ -110,7 +110,7 @@ public class Menu {
     private void showOptionsByRegularRoom(Room room) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV \n 4. Back to rooms menu \n Choose an object by it's number:");
-        switch (scanner.nextInt()){
+        switch (scanner.nextInt()) {
             case 1:
                 showLightOptions(room);
                 scanner.close();
@@ -125,6 +125,7 @@ public class Menu {
                 break;
             case 4:
                 showRoomsMenu();
+                break;
             default:
                 System.out.println("Wrong choice");
                 break;
@@ -134,7 +135,7 @@ public class Menu {
     private void showOptionsByKitchenRoom(Kitchen room) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose an object to change it's status: \n 1. Light \n 2. Door \n 3. TV \n 4. WaterHeater \n  5. Back to rooms menu \n Choose an object by it's number:");
-        switch (scanner.nextInt()){
+        switch (scanner.nextInt()) {
             case 1:
                 showLightOptions(room);
                 scanner.close();
@@ -153,6 +154,7 @@ public class Menu {
                 break;
             case 5:
                 showRoomsMenu();
+                break;
             default:
                 System.out.println("Wrong choice");
                 break;
@@ -160,15 +162,10 @@ public class Menu {
     }
 
     private void showLightOptions(Room room) {
-        System.out.println("1. Light the room 1 \n 2. Darken the room \n Choose an option by it's number:");
+        /*isOpenNotification(room, "light");*/
+        System.out.println("1. Light the room 1 \n 2. Darken the room \n 3. Back to main menu \n Choose an option by it's number:");
 
         Light light = room.getLight();
-
-      /*  if (room.getName() == RoomEnum.Kitchen) {
-            KitchenLight kitchenLight = (KitchenLight) light;
-        } else {
-            RegularLight regularLight = (RegularLight) light;
-        }*/
 
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNext()) {
@@ -179,11 +176,14 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    if(!room.getDoor().isOpen()){
+                    if (!room.getDoor().isOpen()) {
                         light.close();
                     } else {
                         System.out.println("\n The door is open, you cannot close the light \n");
                     }
+                    break;
+                case 3:
+                    showRoomsMenu();
                     break;
                 default:
                     System.out.println("Wrong choice");
@@ -193,7 +193,8 @@ public class Menu {
     }
 
     private void showDoorOptions(Room room) {
-        System.out.println("1. Open door 1 \n 2. Close door \n Choose an option by it's number:");
+       /* isOpenNotification(room, "door");*/
+        System.out.println("1. Open door 1 \n 2. Close door \n 3. Back to main menu \n Choose an option by it's number:");
 
         Door door = room.getDoor();
 
@@ -208,6 +209,9 @@ public class Menu {
                 case 2:
                     door.close();
                     break;
+                case 3:
+                    showRoomsMenu();
+                    break;
                 default:
                     System.out.println("Wrong choice");
                     break;
@@ -217,7 +221,8 @@ public class Menu {
 
 
     private void showTVOptions(Room room) {
-        System.out.println("1. Open TV 1 \n 2. Close TV \n 3. Order vod \n Choose an option by it's number:");
+        /*isOpenNotification(room, "tv");*/
+        System.out.println("1. Open TV 1 \n 2. Close TV \n 3. Order vod \n 4. Back to main menu \n Choose an option by it's number:");
 
         Tv tv = room.getTv();
 
@@ -235,6 +240,9 @@ public class Menu {
                     break;
                 case 3:
                     tv.orderVOD();
+                case 4:
+                    showRoomsMenu();
+                    break;
                 default:
                     System.out.println("Wrong choice");
                     break;
@@ -243,7 +251,8 @@ public class Menu {
     }
 
     private void showWaterHeatherOptions(Kitchen room) {
-        System.out.println("1. Open WaterHeater 1 \n 2. Close WaterHeater \n Choose an option by it's number:");
+        /*isOpenNotification(room, "waterheater");*/
+        System.out.println("1. Open WaterHeater 1 \n 2. Close WaterHeater \n 3. Back to main menu \n Choose an option by it's number:");
 
         WaterHeater waterHeater = room.getWaterHeater();
 
@@ -259,10 +268,49 @@ public class Menu {
                 case 2:
                     waterHeater.close();
                     break;
+                case 3:
+                    showRoomsMenu();
+                    break;
                 default:
+                    System.out.println("Wrong choice");
                     break;
             }
         }
     }
 
+    private void isOpenNotification(Room room, String type) {
+        switch (type.toLowerCase()) {
+            case "light":
+                if (room.getLight().isOpen()) {
+                    System.out.println("Light is open");
+                } else {
+                    System.out.println("Light is closed");
+                }
+                break;
+            case "waterheater":
+                if (((Kitchen) room).getWaterHeater().isOpen()) {
+                    System.out.println("Water heater is open");
+                } else {
+                    System.out.println("Water heater is closed");
+                }
+                break;
+            case "tv":
+                if (room.getTv().isOpen()) {
+                    System.out.println("Tv is open");
+                } else {
+                    System.out.println("Tv is closed");
+                }
+                break;
+            case "door":
+                if (room.getDoor().isOpen()) {
+                    System.out.println("Door is open");
+                } else {
+                    System.out.println("Door is closed");
+                }
+                break;
+            default:
+                System.out.println("Wrong choice");
+                break;
+        }
+    }
 }

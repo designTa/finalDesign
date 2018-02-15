@@ -7,6 +7,7 @@ import entities.lights.Observer;
 import entities.roomTypes.Kitchen;
 import factories.RoomFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,6 +45,7 @@ public class HouseManager {
     }
 
     private void createRoomList() {
+        roomList = new ArrayList<>();
         Observable observable = null;
         Observer observer = null;
         for (RoomEnum roomEnum :
@@ -53,7 +55,7 @@ public class HouseManager {
             if (roomEnum.equals(RoomEnum.Kitchen)) {
                 observable = (KitchenLight) room.getLight();
             } else {
-                observable.addObserver(observer);
+                if(observable != null) observable.addObserver(observer);
             }
         }
     }

@@ -4,10 +4,15 @@ import entities.lights.KitchenLight;
 import entities.Room;
 import entities.RoomEnum;
 import entities.itemEntities.WaterHeater;
+import entities.lights.Light;
 
 
 /**
  * Created by hackeru on 15/02/2018.
+ */
+/**
+ * Created a Singleton Design Pattern method
+ * in order to create one kitchen in the start of the program;
  */
 public class Kitchen extends Room {
 
@@ -32,7 +37,8 @@ public class Kitchen extends Room {
         return this.waterHeater;
     }
 
-    public KitchenLight getLight(){
+    @Override
+    public Light getLight() {
         return this.kitchenLight;
     }
 
